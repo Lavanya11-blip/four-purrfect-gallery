@@ -1,96 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 40 33% 98%;
+    --foreground: 30 10% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 40 30% 97%;
+    --card-foreground: 30 10% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 30% 97%;
+    --popover-foreground: 30 10% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 35 90% 55%;
+    --primary-foreground: 40 33% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 35 25% 90%;
+    --secondary-foreground: 30 10% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 35 20% 94%;
+    --muted-foreground: 30 8% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 25 85% 60%;
+    --accent-foreground: 40 33% 98%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 35 90% 55%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Custom gallery tokens */
+    --gallery-card-bg: 40 35% 99%;
+    --gallery-overlay: 30 30% 10%;
+    --gallery-glow: 35 100% 70%;
+    --filter-active: 35 90% 55%;
+    --filter-inactive: 35 15% 85%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 40 30% 97%;
+    --sidebar-foreground: 30 10% 25%;
+    --sidebar-primary: 35 90% 55%;
+    --sidebar-primary-foreground: 40 33% 98%;
+    --sidebar-accent: 35 25% 92%;
+    --sidebar-accent-foreground: 30 10% 25%;
+    --sidebar-border: 35 20% 88%;
+    --sidebar-ring: 35 90% 55%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 30 15% 8%;
+    --foreground: 40 25% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 30 12% 12%;
+    --card-foreground: 40 25% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 30 12% 12%;
+    --popover-foreground: 40 25% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 35 85% 58%;
+    --primary-foreground: 30 15% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 30 10% 18%;
+    --secondary-foreground: 40 25% 90%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 30 10% 18%;
+    --muted-foreground: 35 15% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 25 80% 55%;
+    --accent-foreground: 30 15% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 30 10% 20%;
+    --input: 30 10% 20%;
+    --ring: 35 85% 58%;
+
+    --gallery-card-bg: 30 12% 14%;
+    --gallery-overlay: 30 30% 5%;
+    --gallery-glow: 35 100% 65%;
+    --filter-active: 35 85% 58%;
+    --filter-inactive: 30 10% 25%;
+
+    --sidebar-background: 30 12% 10%;
+    --sidebar-foreground: 40 25% 90%;
+    --sidebar-primary: 35 85% 58%;
+    --sidebar-primary-foreground: 30 15% 8%;
+    --sidebar-accent: 30 10% 18%;
+    --sidebar-accent-foreground: 40 25% 90%;
+    --sidebar-border: 30 10% 20%;
+    --sidebar-ring: 35 85% 58%;
   }
 }
 
@@ -100,6 +105,60 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .gallery-card {
+    @apply relative overflow-hidden rounded-2xl bg-gallery-card shadow-card transition-all duration-500 ease-out;
+  }
+
+  .gallery-card:hover {
+    @apply shadow-card-hover scale-[1.02];
+  }
+
+  .gallery-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-gallery-overlay/80 via-gallery-overlay/20 to-transparent opacity-0 transition-opacity duration-300;
+  }
+
+  .gallery-card:hover .gallery-overlay {
+    @apply opacity-100;
+  }
+
+  .gallery-caption {
+    @apply absolute bottom-0 left-0 right-0 p-5 text-white transform translate-y-4 opacity-0 transition-all duration-300;
+  }
+
+  .gallery-card:hover .gallery-caption {
+    @apply translate-y-0 opacity-100;
+  }
+
+  .filter-btn {
+    @apply px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 border-2;
+  }
+
+  .filter-btn-active {
+    @apply bg-primary text-primary-foreground border-primary shadow-glow;
+  }
+
+  .filter-btn-inactive {
+    @apply bg-filter-inactive text-foreground/70 border-transparent hover:border-primary/30 hover:bg-secondary;
+  }
+
+  .lightbox-backdrop {
+    @apply fixed inset-0 bg-gallery-overlay/95 backdrop-blur-md z-50;
+  }
+
+  .lightbox-content {
+    @apply relative max-w-5xl max-h-[85vh] rounded-2xl overflow-hidden shadow-2xl;
+  }
+
+  .lightbox-nav {
+    @apply absolute top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white transition-all duration-200 hover:bg-white/20 hover:scale-110;
   }
 }
